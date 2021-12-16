@@ -1,0 +1,17 @@
+.gray {
+    -fx-background-color: #666666;
+    -fx-font-size: 20px;
+    -fx-color: #000000;
+}
+
+.orange {
+    -fx-background-color: #ed801a;
+    -fx-font-size: 20px;
+    -fx-color: #000000;
+}
+
+.lightgray { 
+    -fx-background-color: #b7bab4;
+    -fx-font-size: 20px;
+    
+}
