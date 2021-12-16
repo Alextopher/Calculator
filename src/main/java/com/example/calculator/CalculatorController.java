@@ -8,7 +8,7 @@ public class CalculatorController {
     private Text display;
 
     private void push(char c) {
-        display.setText(c + display.getText());
+        display.setText(display.getText() + c);
     }
 
     // Numbers input
