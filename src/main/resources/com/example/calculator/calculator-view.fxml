@@ -10,49 +10,49 @@
 <?import javafx.scene.text.Text?>
 
 <VBox alignment="TOP_RIGHT" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
-   <Text fx:id="display" strokeType="OUTSIDE" strokeWidth="0.0" text="000000" textAlignment="RIGHT">
+   <Text fx:id="display" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT">
       <font>
          <Font size="50.0" />
       </font>
    </Text>
-    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+    <GridPane styleClass="grid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="75.0" vgrow="ALWAYS" />
+    <RowConstraints minHeight="10.0" prefHeight="75.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="75.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="75.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="75.0" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" onAction="#Button0" prefHeight="110.0" prefWidth="120.0" styleClass="gray" text="0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" onAction="#ButtonCE" prefHeight="79.0" prefWidth="138.0" styleClass="lightgray" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" onAction="#ButtonClear" prefHeight="107.0" prefWidth="183.0" styleClass="lightgray" text="C" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" onAction="#ButtonPoint" prefHeight="114.0" prefWidth="204.0" styleClass="lightgray" text="." GridPane.columnIndex="3" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" onAction="#Buttonequal" prefHeight="118.0" prefWidth="169.0" styleClass="orange" text="=" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" onAction="#Buttonsqrt" prefHeight="83.0" prefWidth="174.0" styleClass="lightgray" text="sqrt(a)" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" onAction="#Button1" prefHeight="149.0" prefWidth="120.0" styleClass="gray" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" onAction="#Button2" prefHeight="99.0" prefWidth="154.0" styleClass="gray" text="2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" onAction="#Button3" prefHeight="122.0" prefWidth="193.0" styleClass="gray" text="3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" onAction="#ButtonPlus" prefHeight="109.0" prefWidth="155.0" styleClass="orange" text="+" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" onAction="#Button6" prefHeight="95.0" prefWidth="157.0" styleClass="gray" text="6" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#ButtonSquare" prefHeight="133.0" prefWidth="217.0" styleClass="lightgray" text="a^2" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#Button4" prefHeight="77.0" prefWidth="168.0" styleClass="gray" text="4" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#Button5" prefHeight="108.0" prefWidth="165.0" styleClass="gray" text="5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#ButtonPower" prefHeight="107.0" prefWidth="210.0" styleClass="lightgray" text="a^b" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" onAction="#Button7" prefHeight="115.0" prefWidth="228.0" styleClass="gray" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" onAction="#Button8" prefHeight="128.0" prefWidth="203.0" styleClass="gray" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" onAction="#ButtonNagation" prefHeight="98.0" prefWidth="154.0" styleClass="lightgray" text="+/-" />
-      <Button mnemonicParsing="false" onAction="#Button9" prefHeight="88.0" prefWidth="219.0" styleClass="gray" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" onAction="#ButtonMultiplication" prefHeight="129.0" prefWidth="255.0" styleClass="orange" text="x" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" onAction="#ButtonMinus" prefHeight="76.0" prefWidth="208.0" styleClass="orange" text="-" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#ButtonDivision" prefHeight="80.0" prefWidth="149.0" styleClass="orange" text="/" GridPane.columnIndex="4" />
+      <Button mnemonicParsing="false" onAction="#Button0" styleClass="gray" text="0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#ButtonCE" styleClass="lightgray" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#ButtonClear" styleClass="lightgray" text="C" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#ButtonPoint" styleClass="lightgray" text="." GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#Buttonequal" styleClass="orange" text="=" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#Buttonsqrt" styleClass="lightgray" text="sqrt(a)" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#Button1" styleClass="gray" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#Button2" styleClass="gray" text="2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#Button3" styleClass="gray" text="3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#ButtonPlus" styleClass="orange" text="+" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#Button6" styleClass="gray" text="6" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#ButtonSquare" styleClass="lightgray" text="a^2" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#Button4" styleClass="gray" text="4" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#Button5" styleClass="gray" text="5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#ButtonPower" styleClass="lightgray" text="a^b" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#Button7" styleClass="gray" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#Button8" styleClass="gray" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#ButtonNagation" styleClass="lightgray" text="+/-" />
+      <Button mnemonicParsing="false" onAction="#Button9" styleClass="gray" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#ButtonMultiplication" styleClass="orange" text="x" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#ButtonMinus" styleClass="orange" text="-" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#ButtonDivision" styleClass="orange" text="/" GridPane.columnIndex="4" />
       <Slider GridPane.columnIndex="1" GridPane.columnSpan="3" />
    </children>
 </GridPane>

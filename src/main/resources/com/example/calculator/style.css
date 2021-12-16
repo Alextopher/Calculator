@@ -1,7 +1,13 @@
+.grid Button {
+    -fx-max-width: infinity;
+    -fx-max-height: infinity;
+}
+
 .gray {
     -fx-background-color: #666666;
     -fx-font-size: 20px;
     -fx-color: #000000;
+
 }
 
 .orange {
@@ -13,5 +19,4 @@
 .lightgray { 
     -fx-background-color: #b7bab4;
     -fx-font-size: 20px;
-    
 }
