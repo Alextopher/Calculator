@@ -230,40 +230,55 @@ public class CalculatorController {
     @FXML
     protected void ButtonPlus() {
         operator = Operator.Plus;
-        memory = current;
-        current = 0;
+        if (memory == 0) {
+            memory = current;
+        } else {
+            current = memory;
+        }
         display.setText("");
     }
 
     @FXML
     protected void ButtonMinus() {
         operator = Operator.Minus;
-        memory = current;
-        current = 0;
+        if (memory == 0) {
+            memory = current;
+        } else {
+            current = memory;
+        }
         display.setText("");
     }
 
     @FXML
     protected void ButtonMultiplication() {
         operator = Operator.Multiplication;
-        memory = current;
-        current = 0;
+        if (memory == 0) {
+            memory = current;
+        } else {
+            current = memory;
+        }
         display.setText("");
     }
 
     @FXML
     protected void ButtonDivision() {
         operator = Operator.Division;
-        memory = current;
-        current = 0;
+        if (memory == 0) {
+            memory = current;
+        } else {
+            current = memory;
+        }
         display.setText("");
     }
 
     @FXML
     protected void ButtonPower() {
         operator = Operator.Power;
-        memory = current;
-        current = 0;
+        if (memory == 0) {
+            memory = current;
+        } else {
+            current = memory;
+        }
         display.setText("");
     }
 
@@ -271,21 +286,33 @@ public class CalculatorController {
     @FXML
     protected void Buttonsqrt() {
         operator = Operator.Sqrt;
+        if (memory != 0) {
+            current = memory;
+        }
         current = (float) Math.sqrt(current);
+        memory = current;
         show(current);
     }
 
     @FXML
     protected void ButtonSquare() {
         operator = Operator.Square;
+        if (memory != 0) {
+            current = memory;
+        }
         current = current * current;
+        memory = current;
         show(current);
     }
 
     @FXML
     protected void ButtonNegation() {
         operator = Operator.Negation;
+        if (memory != 0) {
+            current = memory;
+        }
         current = -current;
+        memory = current;
         show(current);
     }
 }
