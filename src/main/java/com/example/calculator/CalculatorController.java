@@ -1,12 +1,14 @@
 package com.example.calculator;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class CalculatorController {
+    public VBox root;
+
     // Helpers
     enum Operator {
         NULL,
@@ -22,7 +24,7 @@ public class CalculatorController {
 
     private boolean needsReset;
     private Operator operator = Operator.NULL;
-    private float memory;
+    private float memory = 0;
     private float current;
 
     private void show(float d) {
@@ -54,6 +56,65 @@ public class CalculatorController {
         slider.valueProperty().addListener((observable, oldValue, newValue) -> {
             current = (float) (Math.floor((double)newValue * 100) / 100);
             show(current);
+        });
+
+        root.addEventHandler(KeyEvent.KEY_TYPED,(keyEvent) -> {
+            switch (keyEvent.getCharacter()) {
+                case "0":
+                    Button0();
+                    break;
+                case "1":
+                    Button1();
+                    break;
+                case "2":
+                    Button2();
+                    break;
+                case "3":
+                    Button3();
+                    break;
+                case "4":
+                    Button4();
+                    break;
+                case "5":
+                    Button5();
+                    break;
+                case "6":
+                    Button6();
+                    break;
+                case "7":
+                    Button7();
+                    break;
+                case "8":
+                    Button8();
+                    break;
+                case "9":
+                    Button9();
+                    break;
+                case "+":
+                    ButtonPlus();
+                    break;
+                case "-":
+                    ButtonMinus();
+                    break;
+                case "*":
+                    ButtonMultiplication();
+                    break;
+                case "/":
+                    ButtonDivision();
+                    break;
+                case "^":
+                    ButtonPower();
+                    break;
+                case ".":
+                    ButtonPoint();
+                    break;
+                case "\r":
+                    Buttonequal();
+                    break;
+                default:
+                    System.out.println(keyEvent);
+                    break;
+            }
         });
     }
 
