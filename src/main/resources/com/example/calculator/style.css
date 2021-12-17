@@ -20,3 +20,17 @@
     -fx-background-color: #b7bab4;
     -fx-font-size: 20px;
 }
+.gray:pressed{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+
+}
+.orange:pressed{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+
+}
+.lightgray:pressed{
+    -fx-background-color: #ffffff;
+
+}
