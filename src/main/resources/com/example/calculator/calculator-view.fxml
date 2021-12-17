@@ -53,7 +53,7 @@
       <Button mnemonicParsing="false" onAction="#ButtonMultiplication" styleClass="orange" text="x" GridPane.columnIndex="4" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onAction="#ButtonMinus" styleClass="orange" text="-" GridPane.columnIndex="4" GridPane.rowIndex="2" />
       <Button mnemonicParsing="false" onAction="#ButtonDivision" styleClass="orange" text="/" GridPane.columnIndex="4" />
-      <Slider GridPane.columnIndex="1" GridPane.columnSpan="3" />
+      <Slider fx:id="slider" max="1" GridPane.columnIndex="1" GridPane.columnSpan="3" />
    </children>
 </GridPane>
 </VBox>

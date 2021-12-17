@@ -1,9 +1,13 @@
 package com.example.calculator;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
 
 public class CalculatorController {
+    // Helpers
     enum Operator {
         NULL,
         Plus,
@@ -18,21 +22,18 @@ public class CalculatorController {
 
     private boolean needsReset;
     private Operator operator = Operator.NULL;
-    private double memory;
-    private double current;
+    private float memory;
+    private float current;
 
-    @FXML
-    private Text display;
-
-    private void show(double d) {
+    private void show(float d) {
         if (isInteger(d)) {
             display.setText(Long.toString((long)d));
         } else {
-            display.setText(Double.toString(d));
+            display.setText(Float.toString(d));
         }
     }
 
-    boolean isInteger(double d){
+    boolean isInteger(float d){
         if(d > Long.MAX_VALUE || d < Long.MIN_VALUE){
             return true;
         } else return (long) d == d;
@@ -46,8 +47,22 @@ public class CalculatorController {
             display.setText(display.getText() + c);
         }
 
-        current = Double.parseDouble(display.getText());
+        current = Float.parseFloat(display.getText());
     }
+
+    public void initialize() {
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            current = (float) (Math.floor((double)newValue * 100) / 100);
+            show(current);
+        });
+    }
+
+    // FX
+    @FXML
+    protected Text display;
+
+    @FXML
+    protected Slider slider;
 
     // Numbers input
     @FXML
@@ -142,7 +157,7 @@ public class CalculatorController {
                 memory = memory / current;
                 break;
             case Power:
-                memory = Math.pow(memory, current);
+                memory = (float) Math.pow(memory, current);
                 break;
         }
 
@@ -195,7 +210,7 @@ public class CalculatorController {
     @FXML
     protected void Buttonsqrt() {
         operator = Operator.Sqrt;
-        current = Math.sqrt(current);
+        current = (float) Math.sqrt(current);
         show(current);
     }
 
