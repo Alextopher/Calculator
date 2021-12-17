@@ -48,7 +48,7 @@
       <Button mnemonicParsing="false" onAction="#ButtonPower" styleClass="lightgray" text="a^b" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onAction="#Button7" styleClass="gray" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onAction="#Button8" styleClass="gray" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" onAction="#ButtonNagation" styleClass="lightgray" text="+/-" />
+      <Button mnemonicParsing="false" onAction="#ButtonNegation" styleClass="lightgray" text="+/-" />
       <Button mnemonicParsing="false" onAction="#Button9" styleClass="gray" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onAction="#ButtonMultiplication" styleClass="orange" text="x" GridPane.columnIndex="4" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onAction="#ButtonMinus" styleClass="orange" text="-" GridPane.columnIndex="4" GridPane.rowIndex="2" />

@@ -4,11 +4,49 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
 public class CalculatorController {
+    enum Operator {
+        NULL,
+        Plus,
+        Minus,
+        Multiplication,
+        Division,
+        Power,
+        Sqrt,
+        Square,
+        Negation
+    }
+
+    private boolean needsReset;
+    private Operator operator = Operator.NULL;
+    private double memory;
+    private double current;
+
     @FXML
     private Text display;
 
+    private void show(double d) {
+        if (isInteger(d)) {
+            display.setText(Long.toString((long)d));
+        } else {
+            display.setText(Double.toString(d));
+        }
+    }
+
+    boolean isInteger(double d){
+        if(d > Long.MAX_VALUE || d < Long.MIN_VALUE){
+            return true;
+        } else return (long) d == d;
+    }
+
     private void push(char c) {
-        display.setText(display.getText() + c);
+        if (needsReset) {
+            display.setText(String.valueOf(c));
+            needsReset = false;
+        } else {
+            display.setText(display.getText() + c);
+        }
+
+        current = Double.parseDouble(display.getText());
     }
 
     // Numbers input
@@ -70,58 +108,108 @@ public class CalculatorController {
     // Control
     @FXML
     protected void ButtonClear() {
-        // TODO
+        memory = 0;
+        current = 0;
+        operator = Operator.NULL;
+        display.setText("");
     }
 
     @FXML
     protected void ButtonCE() {
         display.setText("");
+        current = 0;
     }
 
     @FXML
     protected void Buttonequal() {
-        // TODO
+        switch (operator) {
+            case NULL:
+            case Sqrt:
+            case Square:
+            case Negation:
+                memory = current;
+                break;
+            case Plus:
+                memory = memory + current;
+                break;
+            case Minus:
+                memory = memory - current;
+                break;
+            case Multiplication:
+                memory = memory * current;
+                break;
+            case Division:
+                memory = memory / current;
+                break;
+            case Power:
+                memory = Math.pow(memory, current);
+                break;
+        }
+
+        show(memory);
+        needsReset = true;
     }
 
     // Binary Operators
     @FXML
     protected void ButtonPlus() {
-        // TODO
+        operator = Operator.Plus;
+        memory = current;
+        current = 0;
+        display.setText("");
     }
 
     @FXML
     protected void ButtonMinus() {
-        // TODO
+        operator = Operator.Minus;
+        memory = current;
+        current = 0;
+        display.setText("");
     }
 
     @FXML
     protected void ButtonMultiplication() {
-        // TODO
+        operator = Operator.Multiplication;
+        memory = current;
+        current = 0;
+        display.setText("");
     }
 
     @FXML
     protected void ButtonDivision() {
-        // TODO
+        operator = Operator.Division;
+        memory = current;
+        current = 0;
+        display.setText("");
     }
 
     @FXML
     protected void ButtonPower() {
-        // TODO
+        operator = Operator.Power;
+        memory = current;
+        current = 0;
+        display.setText("");
     }
 
     // Unary Operators
     @FXML
     protected void Buttonsqrt() {
-        // TODO
+        operator = Operator.Sqrt;
+        current = Math.sqrt(current);
+        show(current);
     }
 
     @FXML
     protected void ButtonSquare() {
-        // TODO
+        operator = Operator.Square;
+        current = current * current;
+        show(current);
     }
 
     @FXML
-    protected void ButtonNagation() {
-        // TODO
+    protected void ButtonNegation() {
+        operator = Operator.Negation;
+        current = -current;
+        show(current);
     }
 }
